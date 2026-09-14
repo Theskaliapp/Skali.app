@@ -28,7 +28,7 @@ jobs:
           REACT_APP_SUPABASE_URL=${{ secrets.REACT_APP_SUPABASE_URL || 'https://ixahrtibbpjruggivjik.supabase.co' }}
           REACT_APP_SUPABASE_ANON_KEY=${{ secrets.REACT_APP_SUPABASE_ANON_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Iml4YWhydGliYnBqcnVnZ2l2amlrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODk0MDI2NjMsImV4cCI6MjEwNDk3ODY2M30.4yKosj4HuCrPp5Rw1KZ9rGejkzkQdWJAHTO9-QEuCTU' }}
           REACT_APP_GOOGLE_WEB_CLIENT_ID=${{ secrets.REACT_APP_GOOGLE_WEB_CLIENT_ID || '572913753788-il245hv6t2tss0bc097c4jfk4cumpii8.apps.googleusercontent.com' }}
-          REACT_APP_API_URL=${{ secrets.REACT_APP_API_URL || 'https://clanchatapp-backend.onrender.com' }}
+          REACT_APP_API_URL=${{ secrets.REACT_APP_API_URL || 'https://clanchat-api.onrender.com' }}
           EOF
 
       - name: Install deps

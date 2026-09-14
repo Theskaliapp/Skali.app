@@ -7,7 +7,7 @@ export const setToken = (t: string | null) => t ? localStorage.setItem(TOKEN_KEY
 // Deployed FastAPI backend on Render. Used as the fallback inside the native app
 // (which has no same-origin API) so the APK works out of the box even if the
 // REACT_APP_API_URL build var isn't provided.
-const NATIVE_API_FALLBACK = 'https://clanchatapp-backend.onrender.com'
+const NATIVE_API_FALLBACK = 'https://clanchat-api.onrender.com'
 
 // Resolve the backend base URL:
 //  - If REACT_APP_API_URL is baked at build time, always use it (web deploy + APK).
