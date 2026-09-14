@@ -4,8 +4,8 @@ const env = (import.meta as any).env
 // Public config — safe to ship in the client bundle (anon/publishable key & OAuth
 // client id are designed for public exposure). Falling back to baked defaults means
 // a missing CI secret can NEVER crash the app into a black screen again.
-const PUBLIC_SUPABASE_URL = 'https://fkhsijjwkrwbwjjaapbb.supabase.co'
-const PUBLIC_SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZraHNpamp3a3J3YndqamFhcGJiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODQ4MzU3MjMsImV4cCI6MjEwMDQxMTcyM30.0_lwIDS9X1vhrVHPFOMYrn2PwKbzYj43vntx3Fe6k4c'
+const PUBLIC_SUPABASE_URL = 'https://ixahrtibbpjruggivjik.supabase.co'
+const PUBLIC_SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Iml4YWhydGliYnBqcnVnZ2l2amlrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODk0MDI2NjMsImV4cCI6MjEwNDk3ODY2M30.4yKosj4HuCrPp5Rw1KZ9rGejkzkQdWJAHTO9-QEuCTU'
 
 const url = (env.REACT_APP_SUPABASE_URL as string) || PUBLIC_SUPABASE_URL
 const anonKey = (env.REACT_APP_SUPABASE_ANON_KEY as string) || PUBLIC_SUPABASE_ANON_KEY
