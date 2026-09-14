@@ -15,15 +15,15 @@ services:
       - key: MONGO_URL          # MongoDB Atlas URI (Render has no built-in Mongo)
         sync: false
       - key: DB_NAME
-        value: clanchat
+        value: skali
       - key: SUPABASE_URL
-        value: https://fkhsijjwkrwbwjjaapbb.supabase.co
+        value: https://ixahrtibbpjruggivjik.supabase.co
       - key: SUPABASE_SERVICE_ROLE_KEY
         sync: false
       - key: SUPABASE_JWT_SECRET
         sync: false
       - key: SUPABASE_BUCKET
-        value: clanchat-media
+        value: skali-media
       - key: DM_ENC_KEY         # base64 32-byte key; keep STABLE or old DMs won't decrypt
         sync: false
       - key: LIVEKIT_URL
@@ -51,13 +51,13 @@ services:
         destination: /index.html
     envVars:
       - key: REACT_APP_SUPABASE_URL
-        value: https://fkhsijjwkrwbwjjaapbb.supabase.co
+        value: https://ixahrtibbpjruggivjik.supabase.co
       - key: REACT_APP_SUPABASE_ANON_KEY
-        sync: false
+        value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Iml4YWhydGliYnBqcnVnZ2l2amlrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODk0MDI2NjMsImV4cCI6MjEwNDk3ODY2M30.4yKosj4HuCrPp5Rw1KZ9rGejkzkQdWJAHTO9-QEuCTU
       - key: REACT_APP_GOOGLE_WEB_CLIENT_ID
-        # Web OAuth client in the SAME Google Cloud project (24500940599) as the
+        # Web OAuth client in the SAME Google Cloud project (skaliapp-e0dee) as the
         # Android client. Must match nativeGoogle.ts + the android-apk.yml default,
         # otherwise native Google sign-in throws [16] "reauth failed".
-        value: 24500940599-ps9kauvvquoh2ldh2iacsb04piui40cs.apps.googleusercontent.com
+        value: 572913753788-il245hv6t2tss0bc097c4jfk4cumpii8.apps.googleusercontent.com
       - key: REACT_APP_API_URL   # absolute backend URL (e.g. https://clanchat-backend.onrender.com)
         sync: false
