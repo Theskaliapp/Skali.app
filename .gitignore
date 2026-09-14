@@ -89,6 +89,8 @@ node_modules/@next/swc-linux-arm64-gnu/next-swc.linux-arm64-gnu.node
 !.env.example
 *.keystore
 debug.keystore
+# Exception: this DEBUG keystore is intentionally committed so the Google sign-in SHA-1 stays STABLE across builds. (Release keystores must still never be committed.)
+!android/app/debug.keystore
 credentials.json
 *.key
 .credentials

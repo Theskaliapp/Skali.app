@@ -55,28 +55,13 @@ jobs:
           if [ ! -d android ]; then npx cap add android; fi
           npx cap sync android
 
-      # Shared keystore keeps the SHA-1 STABLE across builds so Google sign-in keeps working.
-      # Create the secret: base64 -w0 android/app/debug.keystore
-      - name: Restore shared debug keystore
-        env:
-          ANDROID_KEYSTORE_BASE64: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
+      # The debug keystore is committed at android/app/debug.keystore and wired via
+      # signingConfigs.debug in build.gradle, so the Google sign-in SHA-1 is STABLE
+      # across every build — no secret needed.
+      - name: Confirm committed debug keystore
         run: |
-          mkdir -p ~/.android
-          if [ -z "$ANDROID_KEYSTORE_BASE64" ]; then
-            echo "::warning::ANDROID_KEYSTORE_BASE64 secret not set — Gradle will generate a random debug keystore and Google sign-in will fail until its SHA-1 is registered. Set the secret for stable, working builds."
-            exit 0
-          fi
-          # Strip any whitespace/newlines the secret may contain (macOS/Windows base64 wraps at 76 chars),
-          # then decode tolerantly (-i ignores non-alphabet garbage). This avoids 'base64: invalid input'.
-          printf '%s' "$ANDROID_KEYSTORE_BASE64" | tr -d '[:space:]' | base64 -d -i > ~/.android/debug.keystore 2>/dev/null || true
-          # Validate it's actually a keystore. If not, don't fail the build — warn and let Gradle create one.
-          if keytool -list -keystore ~/.android/debug.keystore -alias androiddebugkey -storepass android >/dev/null 2>&1; then
-            echo "Using shared debug keystore. SHA-1:"
-            keytool -list -v -keystore ~/.android/debug.keystore -alias androiddebugkey -storepass android | grep SHA1 || true
-          else
-            echo "::warning::ANDROID_KEYSTORE_BASE64 is set but is NOT valid base64 of a keystore. Regenerate the secret from your local debug keystore with:  base64 -w0 ~/.android/debug.keystore   (Linux)  or   base64 -i ~/.android/debug.keystore | tr -d '\\n'   (macOS), and paste the ENTIRE single-line output. Falling back to a generated debug keystore for this build (Google sign-in SHA-1 will differ)."
-            rm -f ~/.android/debug.keystore
-          fi
+          echo "Signing with committed keystore: android/app/debug.keystore"
+          keytool -list -v -keystore android/app/debug.keystore -alias androiddebugkey -storepass android 2>/dev/null | grep -E "SHA1:|SHA256:" || echo "keystore present (fingerprint read skipped)"
 
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v4
@@ -90,7 +75,7 @@ jobs:
       - name: Echo signing SHA-1
         if: always()
         run: |
-          KS=~/.android/debug.keystore
+          KS=android/app/debug.keystore
           echo "==================== DEBUG SIGNING FINGERPRINT ===================="
           if [ -f "$KS" ]; then
             keytool -list -v -keystore "$KS" -alias androiddebugkey -storepass android 2>/dev/null \
