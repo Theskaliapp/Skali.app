@@ -10,9 +10,9 @@ const env = (import.meta as any).env
 // NEVER put the Android client ID here — doing so causes error [16].
 // Client IDs are public and safe to ship; the baked default keeps native sign-in
 // working even if no CI env var is set. Web + Android clients must be in the SAME
-// Google Cloud project (24500940599), and the Android client must carry the app's
+// Google Cloud project (skaliapp-e0dee, 572913753788), and the Android client must carry the app's
 // package name (app.skali.mobile) + release SHA-1.
-const PUBLIC_GOOGLE_WEB_CLIENT_ID = '24500940599-ps9kauvvquoh2ldh2iacsb04piui40cs.apps.googleusercontent.com'
+const PUBLIC_GOOGLE_WEB_CLIENT_ID = '572913753788-il245hv6t2tss0bc097c4jfk4cumpii8.apps.googleusercontent.com'
 const WEB_CLIENT_ID = ((env.REACT_APP_GOOGLE_WEB_CLIENT_ID as string) || '').trim() || PUBLIC_GOOGLE_WEB_CLIENT_ID
 
 export function isNative(): boolean {
