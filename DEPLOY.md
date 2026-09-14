@@ -51,7 +51,7 @@ Open in Android Studio instead if you prefer: `npx cap open android`.
 
 ### Critical APK notes
 - `REACT_APP_API_URL` MUST be set before `yarn build` or the app can't reach the backend (blank data / login loops).
-- Native Google sign-in needs the **Android OAuth client** (`app.clanchat.mobile`) to have your keystore's **SHA-1** registered, and the **Web Client ID** passed as `REACT_APP_GOOGLE_WEB_CLIENT_ID` (already set). Debug SHA-1 from the spec: `2C:6F:93:26:B3:15:03:7D:77:6D:E4:01:DE:C4:5C:94:AD:C6:B3:7C` — if your generated keystore differs, register the new one.
+- Native Google sign-in needs the **Android OAuth client** (`app.skali.mobile`) to have your keystore's **SHA-1** registered, and the **Web Client ID** passed as `REACT_APP_GOOGLE_WEB_CLIENT_ID` (already set). Debug SHA-1 from the spec: `2C:6F:93:26:B3:15:03:7D:77:6D:E4:01:DE:C4:5C:94:AD:C6:B3:7C` — if your generated keystore differs, register the new one.
 - Always sign every sideloaded test build with the SAME keystore, or Google sign-in breaks until the new SHA-1 is added.
 - The DM WebSocket and all API calls use `REACT_APP_API_URL` (absolute) inside the app — verified in code.
 

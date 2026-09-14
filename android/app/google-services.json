@@ -9,7 +9,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:286762294730:android:d187cdf44ff9f6d9430333",
         "android_client_info": {
-          "package_name": "app.clanchat.mobile"
+          "package_name": "app.skali.mobile"
         }
       },
       "oauth_client": [
@@ -17,7 +17,7 @@
           "client_id": "286762294730-elcf92tteilp63fqhdngee7vj72o5r5o.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "app.clanchat.mobile",
+            "package_name": "app.skali.mobile",
             "certificate_hash": "2c6f9326b315037d776de401dec45c94adc6b37c"
           }
         },

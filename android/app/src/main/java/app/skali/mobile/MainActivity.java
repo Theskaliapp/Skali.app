@@ -1,4 +1,4 @@
-package app.clanchat.mobile;
+package app.skali.mobile;
 
 import android.content.Intent;
 import android.os.Bundle;

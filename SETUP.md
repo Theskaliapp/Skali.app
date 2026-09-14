@@ -3,7 +3,7 @@
 Code implements build steps 1-7 (Firebase removed; Supabase client, web + native Google sign-in, FastAPI JWT verification, Supabase Storage). You complete A-D below.
 
 ## A. Google Cloud Console -> Credentials
-- Android client `app.clanchat.mobile`: add SHA-1 `2C:6F:93:26:B3:15:03:7D:77:6D:E4:01:DE:C4:5C:94:AD:C6:B3:7C` (and any keystore SHA-1 from step D).
+- Android client `app.skali.mobile`: add SHA-1 `2C:6F:93:26:B3:15:03:7D:77:6D:E4:01:DE:C4:5C:94:AD:C6:B3:7C` (and any keystore SHA-1 from step D).
 - Web client: Authorized JS origins = `https://clanchatapp.onrender.com` + `http://localhost:3000`; Authorized redirect URI = `https://fkhsijjwkrwbwjjaapbb.supabase.co/auth/v1/callback`.
 - Delete the duplicate Android client; rotate any publicly-posted keys.
 
@@ -42,7 +42,7 @@ npx cap add android             # first time
 npx cap sync                    # installs @capgo/capacitor-social-login native + copies web
 # open android/ in Android Studio, build debug APK signed with the shared keystore
 ```
-`capacitor.config.ts` already sets appId `app.clanchat.mobile`, webDir `dist`. Native Google sign-in code is in `src/lib/nativeGoogle.ts` (initialized at startup, called from the login button when `Capacitor.isNativePlatform()`).
+`capacitor.config.ts` already sets appId `app.skali.mobile`, webDir `dist`. Native Google sign-in code is in `src/lib/nativeGoogle.ts` (initialized at startup, called from the login button when `Capacitor.isNativePlatform()`).
 
 ## Notes
 - `.gitignore` already excludes `.env*`, `*.keystore`, `debug.keystore`.
