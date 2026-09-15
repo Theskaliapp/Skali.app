@@ -53,7 +53,7 @@ services:
       - key: REACT_APP_SUPABASE_URL
         value: https://ixahrtibbpjruggivjik.supabase.co
       - key: REACT_APP_SUPABASE_ANON_KEY
-        value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Iml4YWhydGliYnBqcnVnZ2l2amlrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODk0MDI2NjMsImV4cCI6MjEwNDk3ODY2M30.4yKosj4HuCrPp5Rw1KZ9rGejkzkQdWJAHTO9-QEuCTU
+        value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Iml4YWhydGliYnBqcnVnZ2l2amlrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODk0MDI2NjMsImV4cCI6MjEwNDk3ODY2M30.4yKosj4HuCrPp5Rw[...]
       - key: REACT_APP_GOOGLE_WEB_CLIENT_ID
         # Web OAuth client in the SAME Google Cloud project (skaliapp-e0dee) as the
         # Android client. Must match nativeGoogle.ts + the android-apk.yml default,

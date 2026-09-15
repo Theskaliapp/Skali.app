@@ -51,7 +51,7 @@ Open in Android Studio instead if you prefer: `npx cap open android`.
 
 ### Critical APK notes
 - `REACT_APP_API_URL` MUST be set before `yarn build` or the app can't reach the backend (blank data / login loops).
-- Native Google sign-in needs the **Android OAuth client** (`app.skali.mobile`) to have your keystore's **SHA-1** registered, and the **Web Client ID** passed as `REACT_APP_GOOGLE_WEB_CLIENT_ID` (already set). Debug SHA-1 from the spec: `2C:6F:93:26:B3:15:03:7D:77:6D:E4:01:DE:C4:5C:94:AD:C6:B3:7C` — if your generated keystore differs, register the new one.
+- Native Google sign-in needs the **Android OAuth client** (`app.skali.mobile`) to have your keystore's **SHA-1** registered, and the **Web Client ID** passed as `REACT_APP_GOOGLE_WEB_CLIENT_ID` ([...]
 - Always sign every sideloaded test build with the SAME keystore, or Google sign-in breaks until the new SHA-1 is added.
 - The DM WebSocket and all API calls use `REACT_APP_API_URL` (absolute) inside the app — verified in code.
 
@@ -59,7 +59,7 @@ Open in Android Studio instead if you prefer: `npx cap open android`.
 `.gitignore` already excludes `.env*` (keeps `.env.example`), `*.keystore`, built assets, and Android generated/machine files. Safe to push.
 
 ## 4. CI: auto-build the APK (GitHub Actions)
-Workflow: `.github/workflows/android-apk.yml` — runs on push to main/master (and manual "Run workflow"). It builds the web app, `cap sync`, builds the **debug APK**, and uploads it as an artifact `clanchat-debug-apk` (download from the Actions run page).
+Workflow: `.github/workflows/android-apk.yml` — runs on push to main/master (and manual "Run workflow"). It builds the web app, `cap sync`, builds the **debug APK**, and uploads it as an artifac[...]
 
 Add these under **GitHub repo → Settings → Secrets and variables → Actions**:
 - `REACT_APP_API_URL` — your deployed backend URL (required, baked into the build).
@@ -72,4 +72,4 @@ Add these under **GitHub repo → Settings → Secrets and variables → Actions
   ```
 - Optional overrides (else public defaults are used): `REACT_APP_SUPABASE_URL`, `REACT_APP_GOOGLE_WEB_CLIENT_ID`.
 
-If `ANDROID_KEYSTORE_BASE64` is not set, the build still runs but uses a random keystore (Google sign-in won't work until its SHA-1 is registered) — the workflow prints a warning. Register the keystore's SHA-1 on the Android OAuth client in Google Cloud Console.
+If `ANDROID_KEYSTORE_BASE64` is not set, the build still runs but uses a random keystore (Google sign-in won't work until its SHA-1 is registered) — the workflow prints a warning. Register the k[...]

@@ -42,7 +42,7 @@ npx cap add android             # first time
 npx cap sync                    # installs @capgo/capacitor-social-login native + copies web
 # open android/ in Android Studio, build debug APK signed with the shared keystore
 ```
-`capacitor.config.ts` already sets appId `app.skali.mobile`, webDir `dist`. Native Google sign-in code is in `src/lib/nativeGoogle.ts` (initialized at startup, called from the login button when `Capacitor.isNativePlatform()`).
+`capacitor.config.ts` already sets appId `app.skali.mobile`, webDir `dist`. Native Google sign-in code is in `src/lib/nativeGoogle.ts` (initialized at startup, called from the login button when `C[...]
 
 ## Notes
 - `.gitignore` already excludes `.env*`, `*.keystore`, `debug.keystore`.
