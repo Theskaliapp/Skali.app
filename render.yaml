@@ -19,9 +19,9 @@ services:
       - key: SUPABASE_URL
         value: https://ixahrtibbpjruggivjik.supabase.co
       - key: SUPABASE_SERVICE_ROLE_KEY
-        sync: false
+        value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Iml4YWhydGliYnBqcnVnZ2l2amlrIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc4OTQwMjY2MywiZXhwIjoyMTA0OTc4NjYzfQ.03XAPWqJsqGhgYzgSvu9BA5fzGTeXmbgKvL5JxV5SUg
       - key: SUPABASE_JWT_SECRET
-        sync: false
+        value: 16c061bc-d447-4978-bfb0-3f12200f8ebf
       - key: SUPABASE_BUCKET
         value: skali-media
       - key: DM_ENC_KEY         # base64 32-byte key; keep STABLE or old DMs won't decrypt
